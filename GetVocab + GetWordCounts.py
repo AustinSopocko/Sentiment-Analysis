@@ -8,7 +8,7 @@ reviews = reviewsFile['text'].values
 labels = reviewsFile['label'].values
 
 def getVocabandFrequencies():
-    vec = CountVectorizer(max_features = 10000)
+    vec = CountVectorizer(max_features = 10000) #10000 is amount of unique words, this is a random number I chose , will probably change later 
     docTermMatrix = vec.fit_transform(reviews)
     vocab = vec.get_feature_names_out() #gets list of  all words seen in reviews
     docTermMatrix = docTermMatrix.toarray()
