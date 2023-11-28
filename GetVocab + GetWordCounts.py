@@ -19,3 +19,4 @@ def getVocabandFrequencies():
         currentLabel = labels[i]
         for j in range(len(vocab)):
             wordCounts[currentLabel][vocab[j]] += docTermMatrix[i][j] #increments wordcount for word with that label
+    return vocab, wordCounts
