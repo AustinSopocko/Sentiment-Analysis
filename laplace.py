@@ -1,5 +1,5 @@
-from math import log
-
-def laplace(wordFrequency, sumAllWordFrequencies, sizeAllWords):
-    probability = (wordFrequency + 1) / (sumAllWordFrequencies + sizeAllWords)
-    return log(probability)
+import math
+def laplace(wordCounts,allWords,currentWord, reviewTotals, currentLabel):
+    x = wordCounts[currentLabel][currentWord] + 1 # gets frequency of word + 1
+    y = reviewTotals[currentLabel] + len(allWords) #gets number of reviews for that label and the size of all words seen
+    return math.log(x/y)
