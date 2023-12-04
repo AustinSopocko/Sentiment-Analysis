@@ -6,7 +6,7 @@ def fit(reviews, labels,labelOptions):
     reviewTotals = {}
     conditionalProbabilities = {}
     groupedReviews = groupDataByLabel(reviews, labels, labelOptions)
-    for label, data in groupedReviews.items(): #loops thorugh each label and value pair in dictionary
+    for label, data in groupedReviews.items(): #loops through each label and value pair in dictionary
         reviewTotals[label] = len(data) #gets number of reviews for that label
         conditionalProbabilities[label] = math.log(reviewTotals[label]/len(reviews)) #divides number of reviews of that label by total number of reviews.
     return reviewTotals, conditionalProbabilities
